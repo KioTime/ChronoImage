@@ -1,5 +1,4 @@
 function convertImage() {
-    // Obtener el archivo de imagen y el formato seleccionado
     const inputFile = document.getElementById('inputFile').files[0];
     const formatSelect = document.getElementById('formatSelect').value;
     const downloadButton = document.getElementById('downloadButton');
@@ -8,13 +7,11 @@ function convertImage() {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     
-    // Verificar si se ha seleccionado una imagen
     if (!inputFile) {
         alert('Por favor selecciona una imagen.');
         return;
     }
     
-    // Crear un lector de archivos para cargar la imagen
     const reader = new FileReader();
     
     reader.onload = function(e) {
@@ -45,5 +42,5 @@ function convertImage() {
         };
     };
     
-    reader.readAsDataURL(inputFile); // Leer el archivo como URL de datos
+    reader.readAsDataURL(inputFile);
 }

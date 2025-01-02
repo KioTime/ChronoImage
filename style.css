@@ -22,11 +22,10 @@ body {
     font-family: 'Roboto', sans-serif; /* Usamos la fuente Roboto */
     background-color: var(--color-fondo); /* Fondo general negro */
     color: var(--color-texto); /* Color blanco para el texto */
-    overflow: hidden;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Asegura que el contenido ocupe al menos el 100% de la altura de la pantalla */
 }
 
 /* Encabezado */
@@ -69,15 +68,15 @@ header .header-logo {
 /* Contenido principal */
 main {
     background-color: var(--color-fondo); /* Fondo negro para mantener la uniformidad */
-    padding: 20rem 0 50px; /* Espacio superior aumentado para separar más del header */
-    flex: 1;
+    padding: 16rem 0 50px; /* Espacio superior aumentado para separar más del header */
+    flex-grow: 1; /* Asegura que el contenido principal ocupe el espacio restante */
     text-align: center;
 }
 
 main h2 {
     font-size: 2rem;
     color: var(--color-secundario); /* Color blanco para los subtítulos */
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
 }
 
 /* Estilos para los inputs (selector de imagen y tipo de formato) */
@@ -159,17 +158,23 @@ button:hover {
 }
 
 #downloadButton {
-    background-color: var(--color-boton-fondo);
-    color: var(--color-texto);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
+    background-color: var(--color-fondo); /* Fondo dorado */
+    color: var(--color-texto); /* Texto blanco */
+    margin: 3rem;
+    padding: 15px 30px; /* Agregamos padding para darle espacio interno al botón */
+    border: none; /* Eliminar cualquier borde predeterminado */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 1.2rem;
+    outline: none; /* Eliminar el contorno que algunos navegadores agregan al hacer foco */
 }
 
+/* Sin efecto hover */
 #downloadButton:hover {
-    background-color: var(--color-boton-hover);
+    background-color: var(--color-fondo); /* Sin cambio de color al pasar el mouse */
 }
+
+
 
 #formatText {
     margin-top: 10px;
@@ -178,19 +183,49 @@ button:hover {
     font-weight: bold;
 }
 
+/* Estilo para el contenedor del botón "Volver" */
+.back-button-container {
+    position: fixed;
+    bottom: 10rem; /* Distancia ajustada desde el pie de la página */
+    left: 5rem; /* Distancia desde el borde izquierdo */
+    z-index: 1000; /* Asegura que esté encima del contenido */
+}
+/* Estilo del botón "Volver" */
+.back-button {
+    width: 3rem; /* Tamaño pequeño */
+    height: 3rem; /* Tamaño pequeño */
+    padding: 0; /* Elimina padding extra */
+    background-color: var(--color-boton-fondo);
+    color: var(--color-fondo);
+    border: none;
+    border-radius: 50%; /* Hace el botón completamente redondo */
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Centra el contenido del botón */
+    justify-content: center; /* Centra la flecha dentro del botón */
+    font-family: 'Poppins', Arial, sans-serif;
+}
+.back-button i {
+    font-size: 1.6rem; /* Tamaño pequeño de la flecha */
+    margin-right: 0; /* Elimina margen extra */
+}
+.back-button:hover {
+    background-color: var(--color-boton-hover);
+}
+
+
 /* Pie de página */
 footer {
     background-color: var(--color-pie-fondo); /* Fondo negro más oscuro */
     color: var(--color-pie-texto); /* Texto blanco */
     text-align: center;
     padding: 1rem;
-    position: relative;
     width: 100%;
-    bottom: 0;
     display: flex;
     justify-content: center; /* Centra los elementos del footer horizontalmente */
     align-items: center; /* Centra los elementos del footer verticalmente */
-    margin-top: -4.6rem; /* Subir el footer ajustando este valor */
+    position: relative; /* Permite que el pie se ajuste al final del contenido */
+    margin-top: 6%;
 }
 
 /* Contenedor para el logo en el footer */
