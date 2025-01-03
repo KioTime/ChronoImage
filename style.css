@@ -183,6 +183,16 @@ button:hover {
     font-weight: bold;
 }
 
+/* Canvas */
+#canvas {
+    width: 100vw; /* Ajusta el ancho al 100% del ancho de la ventana */
+    height: 100vh; /* Ajusta la altura al 100% de la ventana */
+    object-fit: contain; /* Mantiene la proporción de la imagen, sin que se recorte */
+    display: block; /* Asegura que el canvas sea un bloque */
+    margin: 0 auto; /* Centra el canvas */
+}
+
+
 /* Pie de página */
 footer {
     background-color: var(--color-pie-fondo); /* Fondo negro más oscuro */
